@@ -1,7 +1,6 @@
-from bs4 import BeautifulSoup
-from urllib.request import Request, urlopen
 import fnmatch
-
+from urllib.request import Request, urlopen
+from bs4 import BeautifulSoup
 
 while True:
     url = "https://www.thesaurus.com/browse/"
