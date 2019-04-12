@@ -9,7 +9,7 @@ while True:
 
     fail = False
     x = 0
-    while True:
+    while fail == True:
         if x > 50:
             fail = True
             break
