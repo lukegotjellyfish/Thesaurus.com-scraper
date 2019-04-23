@@ -4,22 +4,25 @@ from bs4 import BeautifulSoup
 
 while True:
     url = "https://www.thesaurus.com/browse/"
-    url += input("Enter word to find:\n- ")
+    urlin = input("Enter word to find:\n- ").strip().lower().replace(" ", "")
+    if (len(urlin) == 0): continue
+
+    url += urlin
     req = Request(url)
 
     fail = False
-    x = 0
-    while fail == True:
-        if x > 50:
+    for x in range(0, 10):
+        if (x == 10):
             fail = True
             break
+
         try:
             html_page = urlopen(req)
             soup = BeautifulSoup(html_page, "lxml")
             break
-        except:
-            x += 1
-            continue
+
+        except: continue
+
     if (fail == True):
         print("Error 404\n\n")
         continue
@@ -41,4 +44,4 @@ while True:
             word_bank.append(item.replace("%20", " "))
     word_bank = sorted(word_bank)
 
-    print("\nWord count: " + str(len(word_bank)) + "\n " + '\n '.join(word_bank) + "\n")
+    print("╔══════════════════════\n║ Word: " + str(urlin) + "\n║ Word count: " + str(len(word_bank)) + "\n╠══════════════════════\n║ " + '\n║ '.join(word_bank) + "\n╚══════════════════════")
