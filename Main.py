@@ -30,8 +30,9 @@ while True:
     if (fail == True):
         print("Error 404\n\n")
         continue
-
-    contents = soup.find(class_="css-1lc0dpe et6tpn80")
+	
+	#get all links in the box of words (= the words)
+    contents = soup.find(class_ = "css-17d6qyx-WordGridLayoutBox et6tpn80")
     words = []
     takeaway = 0
     #print(str(contents))
