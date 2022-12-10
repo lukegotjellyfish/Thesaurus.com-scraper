@@ -32,7 +32,7 @@ while True:
         continue
 	
 	#get all links in the box of words (= the words)
-    contents = soup.find(class_ = "css-17d6qyx-WordGridLayoutBox et6tpn80")
+    contents = soup.find(class_ = "css-1fsijta eebb9dz0")
     words = []
     takeaway = 0
     #print(str(contents))
